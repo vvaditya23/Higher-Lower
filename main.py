@@ -1,8 +1,8 @@
 import art
 import game_data
 import random
+import replit
 
-print(art.logo)
 is_correct = True
 score = 0
 data = game_data.data
@@ -34,16 +34,23 @@ def fetch_random_data():
     #print("Continue")
     is_correct = True
     score += 1
+    replit.clear()
+    print(art.logo)
+    print(f"You are correct. Current score: {score}")
     fetch_random_data()
   elif response == "B" and random_entry['follower_count'] < random_entry1['follower_count']:
     #print("Continue")
     is_correct = True
     score += 1
+    replit.clear()
+    print(art.logo)
+    print(f"You are correct. Current score: {score}")
     fetch_random_data()
   else:
     is_correct = False
-    print("Game over!")
+    replit.clear()
+    print(art.logo)
+    print("Sorry that's wrong answer. Game over!")
     print(f"You scored {score}")
 
 fetch_random_data()
-
